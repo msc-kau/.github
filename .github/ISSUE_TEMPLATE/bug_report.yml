@@ -1,0 +1,149 @@
+name: Bug Report
+description: Report a reproducible technical problem
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a technical issue.
+
+        Please provide enough information for the Technical Committee to understand and reproduce the problem.
+
+        **Do not include passwords, API keys, access tokens, private user data, or other sensitive information.**
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem Description
+      description: Clearly explain what went wrong.
+      placeholder: Describe the problem and what you observed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: Explain the expected result.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Provide clear steps that allow another developer to reproduce the issue.
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. Enter ...
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: Where did the problem occur?
+      options:
+        - Development
+        - Production
+        - Local Development
+        - Unknown
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: Page / Feature
+      description: Which page, API, or feature is affected?
+      placeholder: Example: Event Registration / Admin Dashboard / Login
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser / Device
+      description: Add the browser, operating system, or device if relevant.
+      placeholder: Example: Chrome 154 - Windows 11
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Result
+      description: Describe what happens when the issue occurs.
+      placeholder: Explain the actual result.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Screenshots or Logs
+      description: |
+        Add screenshots, recordings, or relevant non-sensitive logs if they help explain the problem.
+
+        Remove secrets and personal information before sharing.
+      placeholder: Drag files here or paste safe logs.
+
+  - type: textarea
+    id: recent_changes
+    attributes:
+      label: Recent Changes
+      description: Did this start after a recent deployment, Pull Request, migration, or configuration change?
+      placeholder: |
+        Example:
+        Started after PR #42.
+        Unknown if not sure.
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Frequency
+      description: How often does the issue happen?
+      options:
+        - Every time
+        - Frequently
+        - Sometimes
+        - Once
+        - Unknown
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: How much does this problem affect usage?
+      options:
+        - Minor inconvenience
+        - Feature partially unavailable
+        - Feature completely unavailable
+        - Multiple features affected
+        - System unavailable
+        - Unknown
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: Is there currently another way to complete the task?
+      placeholder: Write "None" if no workaround is known.
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other useful technical context.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before Submitting
+      options:
+        - label: I checked that a similar Issue does not already exist.
+          required: true
+        - label: I can reproduce the problem or provided enough information to investigate it.
+          required: true
+        - label: I removed passwords, tokens, credentials, and other sensitive information.
+          required: true
