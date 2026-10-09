@@ -1,0 +1,171 @@
+name: Technical Task
+description: Track internal technical work, refactoring, maintenance, or infrastructure improvements
+title: "[Tech]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for internal technical work that is not a user-facing feature or a reproducible bug.
+
+        Examples include refactoring, infrastructure improvements, database maintenance, testing, documentation, technical debt, and repository configuration.
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What technical work needs to be completed?
+      placeholder: Clearly describe the task.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why Is This Needed?
+      description: Explain why this task is important.
+      placeholder: Describe the technical problem, limitation, or maintenance need.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Technical Area
+      description: Which area does this task affect?
+      options:
+        - Frontend
+        - Backend
+        - Database
+        - Authentication
+        - Authorization / Permissions
+        - Security
+        - Testing
+        - Performance
+        - DevOps / Deployment
+        - Infrastructure
+        - Repository Configuration
+        - Documentation
+        - Dependencies
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: task_type
+    attributes:
+      label: Task Type
+      options:
+        - Refactoring
+        - Technical Debt
+        - Maintenance
+        - Security Improvement
+        - Performance Improvement
+        - Testing Improvement
+        - Database Improvement
+        - Dependency Update
+        - Infrastructure Change
+        - Documentation
+        - Repository Configuration
+        - Investigation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_state
+    attributes:
+      label: Current State
+      description: How does the system currently work?
+      placeholder: Describe the current implementation or limitation.
+
+  - type: textarea
+    id: desired_state
+    attributes:
+      label: Desired Result
+      description: What should be true when this task is complete?
+      placeholder: Describe the expected final technical state.
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Suggested Implementation
+      description: Add an implementation idea if one is already known.
+      placeholder: |
+        Example:
+        - Add an index to ...
+        - Move shared logic into ...
+        - Add tests for ...
+        - Replace ...
+        
+        Write "TBD" if implementation still needs investigation.
+
+  - type: textarea
+    id: affected
+    attributes:
+      label: Affected Components
+      description: Which files, services, tables, APIs, or systems may be affected?
+      placeholder: |
+        Example:
+        - auth middleware
+        - profiles table
+        - Supabase RLS policies
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / Blockers
+      description: Does this task depend on another task, PR, service, or decision?
+      placeholder: Write "None" if there are no known dependencies.
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks
+      description: Could this change affect security, data, production, performance, or existing behavior?
+      placeholder: Write "None" if no known risks exist.
+
+  - type: textarea
+    id: testing
+    attributes:
+      label: Validation / Testing
+      description: How should we verify that this task was completed correctly?
+      placeholder: |
+        Example:
+        - Existing tests pass
+        - Add RLS tests
+        - Verify query performance
+        - Test locally and in development
+
+  - type: textarea
+    id: definition
+    attributes:
+      label: Definition of Done
+      description: What conditions must be met before this task can be considered complete?
+      placeholder: |
+        Example:
+        - Implementation complete
+        - Tests pass
+        - PR reviewed
+        - Documentation updated
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Add any additional technical context.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before Submitting
+      options:
+        - label: I checked that a similar technical task or Issue does not already exist.
+          required: true
+        - label: This task is technical work rather than a general project-management task.
+          required: true
+        - label: I did not include secrets, credentials, or sensitive information.
+          required: true
